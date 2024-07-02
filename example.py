@@ -3,7 +3,9 @@ def build_lenet(input_shape):
   model = tf.keras.Sequential()
   
   # C1 Convolution Layer
-  model.add(tf.keras.layers.Conv2D(filters=6, strides=(1,1), kernel_size=(5,5), activation='tanh', input_shape=input_shape))
+  model.add(tf.keras.layers.Conv2D(filters=6, strides=(1,1), kernel_size=(5,5),
+                                   activation='tanh',
+                                   input_shape=input_shape))
   
   # S2 SubSampling Layer
   model.add(tf.keras.layers.AveragePooling2D(pool_size=(2,2), strides=(2,2)))
@@ -17,7 +19,8 @@ def build_lenet(input_shape):
   # C5 Fully Connected Layer
   model.add(tf.keras.layers.Dense(units=120, activation='tanh'))
 
-  # Flatten the output so that we can connect it with the fully connected layers by converting it into a 1D Array
+  # Flatten the output so that we can connect it with the fully 
+  # connected layers by converting it into a 1D Array
   model.add(tf.keras.layers.Flatten())
 
   # FC6 Fully Connected Layers
